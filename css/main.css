@@ -206,6 +206,7 @@ textarea {
   /**Barra**/
   .barra{
     background-color: #353535;
+    padding: 10px;
   }
   .logo{
     width: 80%;
@@ -218,19 +219,10 @@ textarea {
       width: 33%;
     }
   }
-  .menu-movil{
-    color: #ffffff;
-    font-size: 10vw;
-    text-align: center;
-  }
-  @media(min-width:768px){
-    .menu-movil{
-      display: none;
-      }
-    }
+
   /**Navegacion Principal**/
   .navegacion-principal{
-    display: none;
+    
   }
   .navegacion-principal a{
     font-family: 'Oswald',sans-serif;
@@ -239,20 +231,28 @@ textarea {
     font-size: 1.3em;
     text-transform: uppercase;
     text-decoration: none;
+    
+  }
+  .navegacion-principal a:hover{
+    background-color: #fe4918;
   }
   @media(min-width:768px){
-    .navegacion-principal{
-      display: block;
-      }
       .navegacion{
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
       .navegacion-principal a{
-        margin-right: 10px;
+        padding: 5px;
       }
     }
+    /**Menu movil**/
+    @media(min-width:768px){
+      .menu-movil{
+        display: none;
+      }
+    }
+
 
 
 /* ==========================================================================
