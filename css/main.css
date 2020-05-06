@@ -422,15 +422,20 @@ textarea {
       font-family: 'Oswald', sans-serif;
       color: #fe4918;
       text-transform: uppercase;
+      transition: all .5s ease-in-out;
     }
     .invitado img{
       max-width: 100%;
       filter: grayscale(1);
       transition: all .3s ease-in-out;
     }
-    .invitado img:hover{
+    .invitado:hover img{
       filter: grayscale(0);
       transform: scale(1.1);
+    }
+    .invitado:hover p{
+      bottom: -80px;
+      opacity: 0;
     }
     @media(min-width:480px){
       .invitado{
