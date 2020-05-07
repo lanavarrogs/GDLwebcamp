@@ -127,7 +127,7 @@ textarea {
   h3{
     font-size: 1.8em;
     color: #fe4918;
-    font-family: 'PT Sans', sans-serif;
+  
     margin: 0;
   }
   .contenedor{
@@ -495,12 +495,38 @@ textarea {
     }
     .numero{
       color: #fe4918;
-      font-size: 4em;
+      font-size: 4em!important;
       display: block;
       margin: 0 0 10px 0;
     }
+    /**Tabla de Precios**/
+    .lista-precios > li{
+      padding: 10px;
+    }
+    @media(min-width: 768px){
+      .lista-precios > li{
+        width: 33.3%;
+      }
+      .lista-precios{
+        display: flex;
+        justify-content: space-between;
 
-    
+      }
+    }
+    .tabla-precio{
+      border: 1px solid #e1e1e1;
+      background-color: #ffffff;
+      padding: 40px 0;
+      text-align: center;
+      padding: 10px;
+    }
+    .tabla-precio ul li{
+      font-family: 'PT Sans', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #868686;
+      line-height: 61px;
+    }
 
 /* ==========================================================================
    Helper classes
