@@ -179,9 +179,17 @@ textarea {
     font-size: 1em;
     margin-top: 20px;
     transition: all .3s ease;
+    border: 2px solid #fe4918;
   }
   .button:hover{
     background-color: #e33000;
+  }
+  .hollow{
+    background-color: white;
+    color: #fe4918;
+  }
+  .hollow:hover{
+    color: #ffffff;
   }
   /**Header**/
   .hero{
@@ -498,6 +506,7 @@ textarea {
       font-size: 4em!important;
       display: block;
       margin: 0 0 10px 0;
+      font-family: 'Oswald',sans-serif;
     }
     /**Tabla de Precios**/
     .lista-precios > li{
@@ -519,6 +528,12 @@ textarea {
       padding: 40px 0;
       text-align: center;
       padding: 10px;
+      transition: all .3s ease;
+    }
+    .tabla-precio:hover{
+      transform: scale(1.1);
+      border: 1px solid #fe4918;
+      box-shadow: 0px 0px 50px #666666;
     }
     .tabla-precio ul li{
       font-family: 'PT Sans', sans-serif;
@@ -527,6 +542,24 @@ textarea {
       color: #868686;
       line-height: 61px;
     }
+    .tabla-precio ul li::before{
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 5px;
+      font-size: 20px;
+      color: green;
+      -webkit-font-smoothing: antialiased;
+      content: '\2713';
+    }
+    .tabla-precio p.numero{
+      color: #000000;
+      margin: 20px 0;
+    }
+    .btn-compra{
+      padding: 20px 0;
+    }
+    
 
 /* ==========================================================================
    Helper classes
