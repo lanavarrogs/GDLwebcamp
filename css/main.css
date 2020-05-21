@@ -162,7 +162,7 @@ textarea {
     margin: 0;
     padding:0;
   }
-  /**Flotar a la derecha**/
+  /**Posicionar a la derecha**/
   .fd{
     display: flex;
     justify-content: flex-end;
@@ -190,6 +190,13 @@ textarea {
   }
   .hollow:hover{
     color: #ffffff;
+  }
+  .transparent{
+    background-color: transparent;
+    border: 2px solid #ffffff;
+  }
+  .transparent:hover{
+    border-color: #fe4918;
   }
   /**Header**/
   .hero{
@@ -559,7 +566,101 @@ textarea {
     .btn-compra{
       padding: 20px 0;
     }
-    
+    /**MAPA**/
+    .mapa{
+      height: 480px;
+      background-color: green;
+    }
+    /**Testimoniales**/
+    .testimoniales{
+      padding-bottom: 20px;
+    }
+    .testimonial{
+      padding: 5px;
+    }
+    @media(min-width:768px){
+      .testimoniales{
+        display: flex;
+      }
+    }
+    blockquote{
+      background-color: #ffffff;
+      border: 1px solid #e1e1e1;
+      position: relative;
+      margin: 0 0 10px 0;
+      padding-bottom: 20px;
+    }
+    blockquote p{
+      text-align: justify!important;
+      font-size: .8em!important;
+      font-family: 'PT Sans', sans-serif;
+      padding: 0 20px 0 65px;
+    }
+    blockquote p::before{
+      content: '\201c';
+      position: absolute;
+      left: 13px;
+      top: 0px;
+      font-size: 8rem;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      color: #fe4918;
+    }
+    .info-testimonial{
+      padding: 0;
+      display: flex;
+    }
+    .info-testimonial img{
+      border-radius: 50%;
+      width: 20%;
+      margin-left: 20px;
+    }
+    .info-testimonial cite{
+      text-align: left;
+      color: #fe4918;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-top: 20px;
+      width: 66.6%;
+      margin-left: 20px;
+      font-weight: bold;
+      font-style: normal;
+    }
+    .info-testimonial cite span{
+      color: #000000;
+      display: block;
+      text-transform: none;
+      margin-top: 5px;
+    }
+    /**Newsletter**/
+    .newsletter{
+      position: relative;
+      height: auto;
+    }
+    .newsletter::before{
+      background-image: url(../img/bg-newsletter.jpg);
+      content: '';
+    }
+    .contenido{
+      padding: 100px 0;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+    }
+    .contenido p{
+      font-size: 1.2em;
+      text-transform: lowercase;
+    }
+    .contenido h3{
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 7vw;
+      font-family: 'PT Sans', sans-serif;
+    }
+    .boton{
+      margin-top: 40px;
+    }
 
 /* ==========================================================================
    Helper classes
