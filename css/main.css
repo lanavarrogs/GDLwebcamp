@@ -127,8 +127,14 @@ textarea {
   h3{
     font-size: 1.8em;
     color: #fe4918;
-  
     margin: 0;
+  }
+  h4{
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom:2px solid #fe4918;
+    padding-bottom: 10px;
+    font-size: 1.2em;
   }
   .contenedor{
     width: 98%;
@@ -544,7 +550,7 @@ textarea {
     }
     .tabla-precio h3{
       font-family: 'Oswald',sans-serif;
-      font-size: 1.6em;
+      font-size: 1.2em;
     }
     .tabla-precio ul li{
       font-family: 'PT Sans', sans-serif;
@@ -719,6 +725,109 @@ textarea {
       padding: 10px 0;
       margin: 20px 0 0 0;
       text-align: center;
+    }
+    /**INTERNAS**/
+
+    /*Registro*/
+    .registro h3{
+      text-align: center;
+      text-transform: uppercase;
+      margin: 20px;
+    }
+    .caja{
+      background-color: #ffffff;
+      border: 1px solid #e1e1e1;
+      padding: 10px;
+      margin: 10px;
+    }
+    .campo{
+      padding: 20px;
+    }
+    @media(min-width:768px){
+      .registro-info{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .paquetes .tabla-precio:hover{
+      transform: none;
+      box-shadow: none;
+    }
+    .paquetes .tabla-precio input{
+      clear: both;
+      width: 100px;
+      margin: 10px auto 0 auto;
+      display: block;
+    }
+    .contenido-dia{
+      padding: 20px;
+    }
+    @media(min-width:768px){
+      .info-eventos{
+        display: flex;
+        justify-content: space-between;
+      }
+      .taller{
+        flex-basis:calc(33.3% - 2rem); 
+      }
+      .conferencia{
+        flex-basis:calc(33.3% - 2rem);
+      }
+      .seminario{
+        flex-basis:calc(33.3% - 2rem);
+      }
+    }
+    .contenido-dia p{
+      text-align: left;
+    }
+    .contenido-dia label{
+      display: block;
+    }
+    .contenido-dia input{
+      margin-right: 10px;
+    }
+    .taller label time{
+      color: #fe4918;
+      font-weight: bold;
+    }
+    .conferencia label time{
+      color: #fe4918;
+      font-weight: bold;
+    }
+    .seminario label time{
+      color: #fe4918;
+      font-weight: bold;
+    }
+    /** Resumen Registro**/
+    .resumen p{
+      font-size: 1.2em;
+      text-transform: uppercase;
+    }
+    .contenido-resumen{
+      display: flex;
+      justify-content: space-around;
+    }
+    .resumen .extras{
+      flex-basis: calc(50% - 2rem);
+    }
+    .resumen .total{
+      padding: 30px;
+      flex-basis: calc(50% - 2rem);
+    }
+    .resumen input{
+      display: block;
+      margin: 10px auto;
+    }
+    .orden{
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .orden input{
+      margin: 0;
+      width: 200px;
+    }
+    .orden select{
+      display: block;
     }
 
 
