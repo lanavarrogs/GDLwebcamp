@@ -684,13 +684,40 @@ textarea {
       color: #ffffff;
       padding: 0px 20px;
       font-size: 12px;
-      text-align-last: ;
     }
     @media(min-width:768px){
-      .contenido-footer{
-        display: flex;
+        .contenido-footer{
+          display: flex;
+          justify-content: space-between;
+      }
+      .footer-info{
+        flex: 0 0 calc(33.3% - 2rem);
+      }
+      .ultimos-tweets{
+        flex: 0 0 calc(33.3% - 2rem);
       }
     }
+    footer h3{
+      color: #ffffff;
+      text-transform: uppercase;
+      font-family: 'Oswald',sans-serif;
+      margin-bottom: 20px;
+    }
+    footer h3 span{
+      color: #e33000;
+    }
+    .ultimos-tweets li{
+      margin-bottom: 10px;
+    }
+    .copyright{
+      background-color: #2e2e2e;
+      color: #ffffff;
+      padding: 10px 0;
+      margin: 20px 0 0 0;
+      text-align: center;
+    }
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
