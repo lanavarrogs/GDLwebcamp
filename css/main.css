@@ -661,7 +661,36 @@ textarea {
     .boton{
       margin-top: 40px;
     }
-
+    /**Cuenta Regresiva **/
+    .cuenta-regresiva ul li{
+      text-transform: uppercase;
+      font-family: 'Oswald',sans-serif;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    @media(min-width:768px){
+      .cuenta-regresiva ul{
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+    /**Footer**/
+    .site-footer{
+      background-color: #353535;
+      padding-top: 40px;
+      margin-top: 20px;
+    }
+    .contenido-footer{
+      color: #ffffff;
+      padding: 0px 20px;
+      font-size: 12px;
+      text-align-last: ;
+    }
+    @media(min-width:768px){
+      .contenido-footer{
+        display: flex;
+      }
+    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
