@@ -51,7 +51,9 @@
 
          <div class="contenedor-movil">
               <div class="logo">
-                <img src="./img/logo.svg" alt="Logo de gdlwebcamp">
+                <a href="index.html">
+                    <img src="./img/logo.svg" alt="Logo de gdlwebcamp">
+                </a>
               </div>
               <div class="menu-movil">
                 <i class="fas fa-bars"></i>
@@ -85,7 +87,7 @@
                         <input type="email" id="email" name="email" placeholder="Tu Email">
                     </div>
                 </div>
-                <div class="error"></div>
+                <div id="error"></div>
             </div><!--#datosUsuario-->
 
             <div id="paquetes" class="paquetes">
@@ -237,13 +239,11 @@
                             <option value="PLU">Plumas</option>
                         </select>
                     </div>
-                    <input type="button" id="calcular" class="button fd" value="calcular">
+                    <input type="button" id="calcular" class="button" value="calcular">
                 </div><!--Extras-->
                 <div class="total">
-                    <p>Resumen</p>
-                    <div id="lista-productos">
-
-                    </div>
+                    <p>Resumen:</p>
+                    <div id="lista-productos"></div>
                     <p>Total:</p>
                     <div id="suma-total"></div>
                     <input id="btn-registro" type="submit" class="button" value="total">
