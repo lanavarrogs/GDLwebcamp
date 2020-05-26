@@ -30,8 +30,9 @@
 
 
         calcular.addEventListener('click',calcularMontos);
+        paseDia.addEventListener('blur',mostrarDias);
 
-
+        //Funcion que calcula y muestra el resumen de la compra y su total
         function calcularMontos(event){
             event.preventDefault();
             if(regalo.value === ''){
@@ -71,10 +72,14 @@
                 }
 
                 sumaTotal.innerHTML = `<p>$ ${totalPagar.toFixed(2)}</p>`;
-
-                 
                 
             }
+
+           function mostrarDias(){
+                
+            }
+
+
         }
 
     });//Dom content Loaded
