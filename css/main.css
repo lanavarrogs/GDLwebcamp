@@ -173,6 +173,14 @@ textarea {
     display: flex;
     justify-content: flex-end;
   }
+  #error{
+    color: #ffffff;
+    background-color: red;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    display: none;
+  }
   /**Botones**/
   .button{
     background-color: #fe4918;
@@ -186,6 +194,7 @@ textarea {
     margin-top: 20px;
     transition: all .3s ease;
     border: 2px solid #fe4918;
+    border-radius: 5px;
   }
   .button:hover{
     background-color: #e33000;
@@ -761,6 +770,7 @@ textarea {
     }
     .contenido-dia{
       padding: 20px;
+      display: none;
     }
     @media(min-width:768px){
       .info-eventos{
@@ -839,6 +849,9 @@ textarea {
       text-align: center;
       font-size: 2em;
       color: #fe4918;
+    }
+    input[disabled].button{
+      opacity: .5;
     }
 
 
