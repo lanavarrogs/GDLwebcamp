@@ -40,8 +40,9 @@
         var camisas = document.getElementById('camisa_evento');
         var etiquetas = document.getElementById('etiquetas');
 
-
+        if(document.getElementById('calcular')){
         calcular.addEventListener('click',calcularMontos);
+
 
         paseDia.addEventListener('change',mostrarDias);
         paseDosDias.addEventListener('change',mostrarDias);
@@ -95,7 +96,6 @@
                 
             }
         }
-
         //Funcion que muestra dependiendo de los pases los talleres por dia
         function mostrarDias(){
             let boletosDia = parseInt(paseDia.value,10)||0,
@@ -130,7 +130,7 @@
             }
 
         }
-
+    }
 
         function validacionCampos(){
             if(this.value === ''){
@@ -196,4 +196,25 @@ $(function(){
 
     //Lettering
     $('.nombre-sitio').lettering();
+
+    //Menu fijo
+    var windowHeight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll > (windowHeight)){
+            $('.barra').addClass('fixed');
+            $('body').css({'margin-top': barraAltura+'px'});
+        }else{
+            $('.barra').removeClass('fixed');
+            $('body').css({'margin-top': '0px'});
+        }
+    });
+
+    //Menu movil responsivo
+    $('.menu-movil').on('click',function(){
+        $('.navegacion-principal').slideToggle();
+    });
+
+
 });

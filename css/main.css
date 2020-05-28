@@ -168,6 +168,13 @@ textarea {
     margin: 0;
     padding:0;
   }
+  .fixed{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
   /**Posicionar a la derecha**/
   .fd{
     display: flex;
@@ -653,6 +660,7 @@ textarea {
     }
     /**MAPA**/
     .mapa{
+      z-index: -2;
       height: 480px;
       background-color: green;
     }
@@ -803,6 +811,14 @@ textarea {
     }
     /**INTERNAS**/
 
+    /**Conferencia**/
+    .conferencia .navegacion-principal .activo{
+      border-bottom: 2px solid #fe4918;
+    }
+    .galeria a{
+      display: inline-block;
+      margin-bottom: 5px;
+    }
     /*Registro*/
     .registro h3{
       text-align: center;
@@ -919,7 +935,7 @@ textarea {
     input[disabled].button{
       opacity: .5;
     }
-
+    
 
 /* ==========================================================================
    Helper classes
