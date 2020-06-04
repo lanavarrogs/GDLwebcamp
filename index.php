@@ -1,74 +1,4 @@
-<!doctype html>
-<html class="no-js" lang="">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-  <script src="https://kit.fontawesome.com/dcf49974c2.js" crossorigin="anonymous"></script>
-  <meta name="theme-color" content="#fafafa">
-</head>
-
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-    <header class="site-header">
-      <div class="hero">
-          <div class="contenido-header">
-              <nav class="redes-sociales">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-              </nav>
-              <div class="informacion-evento">
-                <div class="fechas">
-                  <p class="fecha"><i class="far fa-calendar-alt"></i>20-12-Dic</p>
-                  <p class="cidad"><i class="fas fa-map-marker-alt"></i>Guadalajara, MX</p>
-                </div>
-                <div class="evento">
-                  <h1 class="nombre-sitio">gdlwebcamp</h1>
-                  <p class="slogan">La mejor conferencia de <span>diseño web</span></p>
-                </div>
-              </div>
-          </div>
-      </div><!--hero-->
-    </header><!--Header-->
-
-    <div class="barra">
-       <div class="contenedor navegacion">
-
-         <div class="contenedor-movil">
-              <div class="logo">
-                <img src="./img/logo.svg" alt="Logo de gdlwebcamp">
-              </div>
-              <div class="menu-movil">
-                <i class="fas fa-bars"></i>
-              </div>
-          </div><!--contenedor-movil-->
-
-         <nav class="navegacion-principal">
-           <a href="conferencia.html">Conferencia</a>
-           <a href="#">Calendario</a>
-           <a href="#">Invitados</a>
-           <a href="registro.html">Reservaciones</a>
-         </nav>
-       </div><!--contenedor-->
-    </div><!--barra-->
-
-
+<?php  include_once 'includes/templates/header.php' ?>
     <section class="seccion contenedor">
         <h2>La mejor conferencia de diseño web en español</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
@@ -306,37 +236,6 @@
       </div><!--cuentaRegresiva-->
     </section><!--seccionCuentaRegresiva-->
 
-    <footer class="site-footer">
-        <div class="contenedor contenido-footer">
-            <div class="footer-info">
-              <h3>Sobre <span>Gdlwebcamp</span></h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius saepe, voluptatem accusantium quaerat fugiat doloribus ex ducimus quo, a, doloremque quae? Explicabo corrupti nihil molestias cumque magni eum eligendi veritatis!</p>
-            </div><!--FooterInfo-->
-            <div class="ultimos-tweets">
-              <h3>Ultimos <span>Tweets</span></h3>
-              <ul>
-                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius saepe, voluptatem accusantium</li>
-                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius saepe, voluptatem accusantium</li>
-                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius saepe, voluptatem accusantium</li>
-              </ul>
-            </div><!--UltimosTweets-->
-            <div class="menu">
-              <h3>Redes <span>Sociales</span></h3>
-              <nav class="redes-sociales">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-              </nav>
-            </div>
-        </div><!--menu-->
-        <p class="copyright">Todos los derechos reservados Gdlwebcamp 2020</p>
-    </footer><!--SiteFooter-->
-
-
-
-
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -347,6 +246,8 @@
   <script src="js/jquery.countdown.js"></script>
   <script src="js/jquery.lettering.js"></script>
   <script src="js/main.js"></script>
+
+  <?php  include_once 'includes/templates/footer.php' ?>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
