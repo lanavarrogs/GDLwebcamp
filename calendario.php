@@ -21,7 +21,7 @@
         ?>
 
             <div class="calendario">
-            
+                
                 <?php 
                     $calendario = array();
                     while ($eventos = $resultados->fetch_assoc()) { 
@@ -50,40 +50,35 @@
                                 echo strftime("%A, %d de %B del %Y", strtotime($dia)); 
                             ?>
                         </h3>
-
-                        <?php
                         
-                            foreach ($lista_eventos as $evento) {?>
-                                <div class="dia">
-                                    <p class="titulo">
-                                       <?php echo $evento['titulo'] ?>
-                                    </p>
-                                    <p class="hora">
-                                        <i class="far fa-clock"></i> 
-                                        <?php echo $evento['fecha'] . " " . $evento['hora'] ?>
-                                    </p>
-                                    <p class="categoria">
-                                         <i class="<?php echo $evento['icono']?>"></i>
-                                        <?php echo $evento['categoria'] ?>
-                                    </p>
-                                    <p>
-                                        <i class="fas fa-user"></i>
-                                        <?php echo $evento['invitado'] ?>
-                                    </p>
-                                </div>
-                        <?php } //fin foreach?>
-
+                        <div class="contenido-evento">
+                            <?php
+                            
+                                foreach ($lista_eventos as $evento) {?>
+                                    <div class="dia">
+                                        <p class="titulo">
+                                        <?php echo $evento['titulo'] ?>
+                                        </p>
+                                        <p class="hora">
+                                            <i class="far fa-clock"></i> 
+                                            <?php echo $evento['fecha'] . " " . $evento['hora'] ?>
+                                        </p>
+                                        <p class="categoria">
+                                            <i class="<?php echo $evento['icono']?>"></i>
+                                            <?php echo $evento['categoria'] ?>
+                                        </p>
+                                        <p>
+                                            <i class="fas fa-user"></i>
+                                            <?php echo $evento['invitado'] ?>
+                                        </p>
+                                    </div>
+                            
+                            <?php } //fin foreach?>
+                         </div>       
                    <?php }//fin foreach ?>
-                
-
-
-
-              
-
-            
-            </div>
-
-
+            </div><!--Calendario-->
     </section>
 
-<?php include_once 'includes/templates/footer.php'?>g
+    <?php  mysqli_close($conexion) ?>
+
+<?php include_once 'includes/templates/footer.php'?>

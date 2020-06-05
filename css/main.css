@@ -935,7 +935,44 @@ textarea {
     input[disabled].button{
       opacity: .5;
     }
-    
+    /**Calendario**/
+    .calendario h3{
+      text-align: center;
+      background-color: #fe4918;
+      color: #ffffff;
+    }
+    .contenido-evento{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .dia{
+      flex-basis: calc(50%);
+      border: 1px solid #e1e1e1;
+      transition: all .3s ease;
+    }
+    .dia:hover{
+      background-color: #e1e1e1;
+      -webkit-transform: scale(1.1);
+    }
+    @media(min-width:768px){
+      .dia{
+        flex-basis: calc(33.3%);
+      }
+    }
+    .dia p{
+
+    }
+    .titulo{
+        font-size: 1em;
+        font-family: 'Oswald', sans-serif;
+        color: #fe4918;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .dia i {
+      color: #fe4918;
+      font-size: 1.4em;
+    }
 
 /* ==========================================================================
    Helper classes
@@ -948,6 +985,7 @@ textarea {
 .hidden {
   display: none !important;
 }
+
 
 /*
 * Hide only visually, but have it available for screen readers:
