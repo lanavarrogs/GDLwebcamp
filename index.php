@@ -24,74 +24,83 @@
             <?php 
             try{
               require_once('includes/functions/db_conexion.php');
-              $sql = 'SELECT * FROM categoria_evento';
+              $sql = 'SELECT * FROM categoria_evento ';
+              $sql .= "ORDER BY orden";
               $resultado = $conexion->query($sql);
             }catch(Exception  $e){
               $error = $e->getMessage();
             }
             ?>
             <nav class="menu-programa">
-             $programas = new array();
             <?php while($categorias = $resultado->fetch_assoc()){ ?>
-              <?php $ ?>
-              <a href="#<?php echo strtolower($) ?>"><i class="fas fa-code"></i>Talleres</a>
+              <?php $categoria = $categorias['cat_evento']; ?>
+              <a href="#<?php echo strtolower($categoria) ?>">
+                    <i class="<?php echo $categorias['icono']?>"></i>
+                    <?php echo $categoria ?>
+              </a>
            <?php } ?>
-            
-              <a href="#conferencias"><i class="fas fa-comment"></i>Conferencias</a>
-              <a href="#seminarios"><i class="fas fa-university"></i>Seminarios</a>
             </nav>
 
-            <div id="talleres" class="info-curso ocultar clearfix">
-                <div class="detalle-evento">
-                  <h3>Html5, Css3 y Javascript </h3>
-                  <p><i class="far fa-clock"></i>16:00 hrs</p>
-                  <p><i class="far fa-calendar-alt"></i>10-Dic</p>
-                  <p><i class="fas fa-user"></i>Luis Angel Navarro Parra</p>
-                </div>
-                <div class="detalle-evento">
-                  <h3>Responsive Web Design </h3>
-                  <p><i class="far fa-clock"></i>20:00 hrs</p>
-                  <p><i class="far fa-calendar-alt"></i>10-Dic</p>
-                  <p><i class="fas fa-user"></i>Luis Angel Navarro Parra</p>
-                </div>
-                <div class="fd">
-                  <a href="calendario.php" class="button">Ver Todos</a>
-                </div>
-            </div><!--Talleres-->
-            <div id="conferencias" class="info-curso ocultar clearfix">
-              <div class="detalle-evento">
-                <h3>Como ser freelancer </h3>
-                <p><i class="far fa-clock"></i>10:00 hrs</p>
-                <p><i class="far fa-calendar-alt"></i>10-Dic</p>
-                <p><i class="fas fa-user"></i>Gregorio Sanchez</p>
-              </div>
-              <div class="detalle-evento">
-                <h3>Tecnologias del futuro</h3>
-                <p><i class="far fa-clock"></i>17:00 hrs</p>
-                <p><i class="far fa-calendar-alt"></i>10-Dic</p>
-                <p><i class="fas fa-user"></i>Susan Sanchez</p>
-              </div>
-              <div class="fd">
-                <a href="calendario.php" class="button">Ver Todos</a>
-              </div>
-          </div><!--Conferencias-->
-          <div id="seminarios" class="info-curso ocultar clearfix">
-            <div class="detalle-evento">
-              <h3>Diseño UI para moviles </h3>
-              <p><i class="far fa-clock"></i>17:00 hrs</p>
-              <p><i class="far fa-calendar-alt"></i>11-Dic</p>
-              <p><i class="fas fa-user"></i>Harold Garcia</p>
-            </div>
-            <div class="detalle-evento">
-              <h3>Aprende a programar en una mañana </h3>
-              <p><i class="far fa-clock"></i>10:00 hrs</p>
-              <p><i class="far fa-calendar-alt"></i>11-Dic</p>
-              <p><i class="fas fa-user"></i>Susana Rivera</p>
-            </div>
-            <div class="fd">
-              <a href="calendario.php" class="button">Ver Todos</a>
-            </div>
-        </div><!--Seminarios-->
+            <?php 
+              try {
+                require_once('includes/functions/db_conexion.php');
+                //Consulta1
+                $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido ";
+                $sql .= " FROM eventos ";
+                $sql .= "INNER JOIN categoria_evento ";
+                $sql .= "ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+                $sql .= "INNER JOIN invitados ";
+                $sql .= "ON eventos.invitado_id = invitados.invitado_id ";
+                $sql .= "AND eventos.id_cat_evento = 1 ";
+                $sql .= "ORDER BY evento_id LIMIT 2; ";
+                //Consulta2
+                $sql .= "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido ";
+                $sql .= " FROM eventos ";
+                $sql .= "INNER JOIN categoria_evento ";
+                $sql .= "ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+                $sql .= "INNER JOIN invitados ";
+                $sql .= "ON eventos.invitado_id = invitados.invitado_id ";
+                $sql .= "AND eventos.id_cat_evento = 2 ";
+                $sql .= "ORDER BY evento_id LIMIT 2; ";
+                //Consulta3
+                $sql .= "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido ";
+                $sql .= " FROM eventos ";
+                $sql .= "INNER JOIN categoria_evento ";
+                $sql .= "ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+                $sql .= "INNER JOIN invitados ";
+                $sql .= "ON eventos.invitado_id = invitados.invitado_id ";
+                $sql .= "AND eventos.id_cat_evento = 3 ";
+                $sql .= "ORDER BY evento_id LIMIT 2;";
+            } catch (\Exception $e) {
+                echo $e->get_Message();
+            }
+           ?> 
+
+           <?php $conexion->multi_query($sql); ?>
+           <?php 
+              do {
+                 $resultados = $conexion->store_result();
+                 $row = $resultados->fetch_all(MYSQLI_ASSOC);?>
+                 <?php $i=0 ?>
+                 <?php foreach ($row as $evento) { ?>
+                 <?php if($i%2 == 0) {?>
+                    <div id="<?php echo strlower($evento['cat_evento'])?>" class="info-curso ocultar clearfix">
+                 <?php } ?>
+                      <div class="detalle-evento">
+                        <h3><?php echo utf8_encode($evento['nombre_evento']) ?></h3>
+                        <p><i class="far fa-clock"></i><?php echo $evento['hora_evento'] ?></p>
+                        <p><i class="far fa-calendar-alt"></i><?php echo $evento['fecha_evento'] ?></p>
+                        <p><i class="fas fa-user"></i><?php echo $evento['nombre'] ?></p>
+                      </div>
+                      <div class="fd">
+                        <a href="calendario.php" class="button">Ver Todos</a>
+                      </div>
+                  </div><!--Talleres-->
+                <?php $i++ ?>
+                <?php } //Fin del foreach ?>   
+           <?php   } while ($conexion->more_results() && $conexion->next_results()); //Fin del while ?>
+
+            
           </div><!--prograEvento-->
         </div><!--contenedor-->
       </div><!--contenidoPrograma-->
