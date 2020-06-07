@@ -812,8 +812,8 @@ textarea {
     /**INTERNAS**/
 
     /**Conferencia**/
-    .conferencia .navegacion-principal .activo{
-      border-bottom: 2px solid #fe4918;
+    .navegacion-principal .activo{
+      border-bottom: 2px solid #fe4918!important;
     }
     .galeria a{
       display: inline-block;
@@ -973,6 +973,12 @@ textarea {
       color: #fe4918;
       font-size: 1.4em;
     }
+    /*ColorBox*/
+    .invitado-contenido{
+      padding: 30px!important;
+      text-align: center;
+    }
+
 
 /* ==========================================================================
    Helper classes

@@ -21,8 +21,22 @@
         <div class="contenedor">
           <div class="programa-evento">
             <h2>Programa del evento</h2>
+            <?php 
+            try{
+              require_once('includes/functions/db_conexion.php');
+              $sql = 'SELECT * FROM categoria_evento';
+              $resultado = $conexion->query($sql);
+            }catch(Exception  $e){
+              $error = $e->getMessage();
+            }
+            ?>
             <nav class="menu-programa">
-              <a href="#talleres"><i class="fas fa-code"></i>Talleres</a>
+             $programas = new array();
+            <?php while($categorias = $resultado->fetch_assoc()){ ?>
+              <?php $ ?>
+              <a href="#<?php echo strtolower($) ?>"><i class="fas fa-code"></i>Talleres</a>
+           <?php } ?>
+            
               <a href="#conferencias"><i class="fas fa-comment"></i>Conferencias</a>
               <a href="#seminarios"><i class="fas fa-university"></i>Seminarios</a>
             </nav>
@@ -41,7 +55,7 @@
                   <p><i class="fas fa-user"></i>Luis Angel Navarro Parra</p>
                 </div>
                 <div class="fd">
-                  <a href="#" class="button">Ver Todos</a>
+                  <a href="calendario.php" class="button">Ver Todos</a>
                 </div>
             </div><!--Talleres-->
             <div id="conferencias" class="info-curso ocultar clearfix">
@@ -58,7 +72,7 @@
                 <p><i class="fas fa-user"></i>Susan Sanchez</p>
               </div>
               <div class="fd">
-                <a href="#" class="button">Ver Todos</a>
+                <a href="calendario.php" class="button">Ver Todos</a>
               </div>
           </div><!--Conferencias-->
           <div id="seminarios" class="info-curso ocultar clearfix">
@@ -75,7 +89,7 @@
               <p><i class="fas fa-user"></i>Susana Rivera</p>
             </div>
             <div class="fd">
-              <a href="#" class="button">Ver Todos</a>
+              <a href="calendario.php" class="button">Ver Todos</a>
             </div>
         </div><!--Seminarios-->
           </div><!--prograEvento-->
@@ -83,35 +97,9 @@
       </div><!--contenidoPrograma-->
     </section><!--programa-->
 
-    <section class="invitados contenedor seccion">
-        <h2>Invitados</h2>
-        <ul class="lista-invitados">
-          <li class="invitado">
-              <img src="img/invitado1.jpg" alt="imagen invitado"/>
-              <p>Rafael Bautista</p>
-          </li>
-          <li class="invitado">
-            <img src="img/invitado2.jpg" alt="imagen invitado"/>
-            <p>Shari Herrera</p>
-          </li>
-          <li class="invitado">
-            <img src="img/invitado3.jpg" alt="imagen invitado"/>
-            <p>Gregorio Sanchez</p>
-          </li>
-          <li class="invitado">
-            <img src="img/invitado4.jpg" alt="imagen invitado"/>
-            <p>Susana Rivera</p>
-          </li>
-          <li class="invitado">
-            <img src="img/invitado5.jpg" alt="imagen invitado"/>
-            <p>Harold Garcia</p>
-          </li>
-          <li class="invitado">
-            <img src="img/invitado6.jpg" alt="imagen invitado"/>
-            <p>Susan Sanchez</p>
-          </li>
-        </ul>
-    </section>
+  
+
+    <?php include_once 'includes/templates/invitados.php'?>
 
 
     <div class="contador parallax">

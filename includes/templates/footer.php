@@ -35,6 +35,15 @@
   <script src="js/jquery.animateNumber.js"></script>
   <script src="js/jquery.countdown.js"></script>
   <script src="js/jquery.lettering.js"></script>
+  <?php 
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php","",$archivo);
+    if($pagina === 'invitados' || $pagina === 'index'){
+      echo '<script src="js/jquery.colorbox.js"></script>'; 
+    }else if($pagina === 'conferencia'){
+      echo '<script src="js/lightbox.js"></script>';
+    }
+  ?>
   <script src="js/main.js"></script>
 
 
