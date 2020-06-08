@@ -52,7 +52,7 @@
                 $sql .= "INNER JOIN invitados ";
                 $sql .= "ON eventos.invitado_id = invitados.invitado_id ";
                 $sql .= "AND eventos.id_cat_evento = 1 ";
-                $sql .= "ORDER BY evento_id LIMIT 2; ";
+                $sql .= "ORDER BY evento_id LIMIT 2;";
                 //Consulta2
                 $sql .= "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido ";
                 $sql .= " FROM eventos ";
@@ -61,7 +61,7 @@
                 $sql .= "INNER JOIN invitados ";
                 $sql .= "ON eventos.invitado_id = invitados.invitado_id ";
                 $sql .= "AND eventos.id_cat_evento = 2 ";
-                $sql .= "ORDER BY evento_id LIMIT 2; ";
+                $sql .= "ORDER BY evento_id LIMIT 2;";
                 //Consulta3
                 $sql .= "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre, apellido ";
                 $sql .= " FROM eventos ";
@@ -81,26 +81,28 @@
               do {
                  $resultados = $conexion->store_result();
                  $row = $resultados->fetch_all(MYSQLI_ASSOC);?>
-                 <?php $i=0 ?>
-                 <?php foreach ($row as $evento) { ?>
-                 <?php if($i%2 == 0) {?>
-                    <div id="<?php echo strlower($evento['cat_evento'])?>" class="info-curso ocultar clearfix">
-                 <?php } ?>
-                      <div class="detalle-evento">
-                        <h3><?php echo utf8_encode($evento['nombre_evento']) ?></h3>
-                        <p><i class="far fa-clock"></i><?php echo $evento['hora_evento'] ?></p>
-                        <p><i class="far fa-calendar-alt"></i><?php echo $evento['fecha_evento'] ?></p>
-                        <p><i class="fas fa-user"></i><?php echo $evento['nombre'] ?></p>
-                      </div>
-                      <div class="fd">
-                        <a href="calendario.php" class="button">Ver Todos</a>
-                      </div>
+                <?php $i = 0; ?>
+                <?php foreach ($row as $evento) {?>
+                <?php if($i % 2 == 0){?>
+                  <div id="<?php echo strtolower($evento['cat_evento'])?>" class="info-curso ocultar clearfix">
+                <?php }?>
+                    <div class="detalle-evento">
+                    <h3><?php echo mb_convert_encoding($evento["nombre_evento"],'UTF-8'); ?></h3>
+                    <p><i class="far fa-clock"></i><?php echo $evento['hora_evento']; ?></p>
+                    <p><i class="far fa-calendar-alt"></i><?php echo $evento['fecha_evento']; ?></p>
+                    <p><i class="fas fa-user"></i><?php echo $evento['nombre'] . " " . $evento['apellido']; ?></p>
+                  </div><!--detalle_evento-->
+                <?php if($i % 2 ==1){?>
+                  <div class="fd">
+                    <a href="calendario.php" class="button">Ver Todos</a>
+                </div>
                   </div><!--Talleres-->
-                <?php $i++ ?>
-                <?php } //Fin del foreach ?>   
-           <?php   } while ($conexion->more_results() && $conexion->next_results()); //Fin del while ?>
+                <?php } ?>
 
-            
+               <?php $i++; ?>
+               <?php } //Fin del for each?>
+               <?php $resultado->free();
+           <?php } while ($conexion->more_results() && $conexion->next_result()); ?>      
           </div><!--prograEvento-->
         </div><!--contenedor-->
       </div><!--contenidoPrograma-->
